@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #fff;
+    background: #fff;
+}
+body, p, .container{
+    font-family: 'Noto Sans', Verdana, Geneva, Tahoma, sans-serif;
+}
+h2, .special-heading {
+    font-family: 'Muli', Arial, Helvetica, sans-serif;
+}
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Logo di kiri, menu di kanan */
+  background: #faf0e8;
+  border-radius: 0 0 0.5vh 0.5vh;
+  height: 100px;
+  width: 100%;
+  z-index: 1000;
+  padding: 0 20px; /* Padding kiri-kanan */
+}
+
+.navbar .logo img {
+  width: 100px;
+  height: 100px;
+  padding-left: 100px;
+  z-index: 1;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 100px;
+}
+
+.navbar a {
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.3rem;
+  color: #272624;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s, transform 0.3s;
+}
+.hero {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    background-image: url("pastry-bg.jpg");
+    background-size: cover;
+    height: 60vh;
+    margin-top: 100px;
+    position: relative; /* Tambahkan ini */
+}
+
+.hero p {
+    font-family: 'Alex Brush', cursive;
+    position: absolute;   /* Tambahkan ini */
+    top: 35%;            /* Jarak dari atas hero */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 8rem;
+    color: #fff;
+    margin: 0;
+    z-index: 2;           /* Pastikan di depan layer gambar */
+    text-align: center;
+    width: 100%;
+    text-shadow: 0 2px 8px #000;
+}
+.container{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: #faf0e8;
+    height: 60vh;
+    position: relative; /* Tambahkan ini */
+}
+.container .box-text{
+  top: 50%;  
+}
+.container h1{
+   
+}
