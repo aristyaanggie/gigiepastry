@@ -2,7 +2,9 @@
     margin: 0;
     padding: 0;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: #fff;
@@ -53,13 +55,17 @@ h2, .special-heading {
   text-decoration: none;
   transition: color 0.3s, transform 0.3s;
 }
+.navbar a:hover{
+    transform: scale(1.1);
+    text-decoration: underline;
+}
 .hero {
     display: flex;
     align-items: flex-start;
     justify-content: center;
     background-image: url("pastry-bg.jpg");
     background-size: cover;
-    height: 60vh;
+    height: 40vh;
     margin-top: 100px;
     position: relative; /* Tambahkan ini */
 }
@@ -67,10 +73,10 @@ h2, .special-heading {
 .hero p {
     font-family: 'Alex Brush', cursive;
     position: absolute;   /* Tambahkan ini */
-    top: 35%;            /* Jarak dari atas hero */
+    top: 25%;            /* Jarak dari atas hero */
     left: 50%;
     transform: translateX(-50%);
-    font-size: 8rem;
+    font-size: 10rem;
     color: #fff;
     margin: 0;
     z-index: 2;           /* Pastikan di depan layer gambar */
@@ -78,17 +84,267 @@ h2, .special-heading {
     width: 100%;
     text-shadow: 0 2px 8px #000;
 }
-.container{
+.container {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
-    background-color: #faf0e8;
+    background-color: #f0e6de;
     height: 60vh;
-    position: relative; /* Tambahkan ini */
+    position: relative;
 }
-.container .box-text{
-  top: 50%;  
+
+.container .box-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100vw; /* Lebar konten agar tidak terlalu melebar */
+    max-width: 1100px;
 }
-.container h1{
-   
+
+.container .box-text h1 {
+    color: #456644;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 16px;
+    position: relative;
+}
+
+.container .box-text h1::after {
+    content: "";
+    display: block;
+    margin: 16px auto 0 auto;
+    width: 100%;
+    height: 3px;
+    background: #4b3a2f;
+    border-radius: 2px;
+}
+
+.container .box-text p {
+    color: #444;
+    font-size: 1.35rem;
+    text-align: left;
+    margin: 16px 0;
+    line-height: 1.6;
+    max-width: 100vw;
+}
+.product-hero {
+    flex-direction: column;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.product-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("product-hero.jpg"); /* Pakai url langsung */
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px);
+    opacity: 0.7;
+    z-index: 1;
+}
+
+.product-hero h1 {
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    color: #456644;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 10vh;
+}
+.product-list {
+    display: flex;
+    gap: 32px;
+    position: relative;
+    z-index: 2;
+    justify-content: center;
+    width: 100%;
+}
+
+.product {
+    background: rgba(255,255,255,0.85);
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    padding: 24px 16px;
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.product img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    transition: 0.5s;
+}
+.product img:hover{
+    transform: scale(1.05);
+}
+
+.product-name {
+    font-family: 'Muli', Arial, Helvetica, sans-serif;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #456644;
+    margin-bottom: 8px;
+}
+
+.product-desc {
+    font-family: 'Noto Sans', Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1rem;
+    color: #444;
+}
+.contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #456644;
+    height: 60vh;
+    position: relative;
+}
+
+.box-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    width: 100%;         /* Ganti dari 100vw ke 90% parent */
+    max-width: 600px;   /* Batas maksimal */
+    padding: 32px 24px;
+    border-radius: 6px;
+    margin: 20px;
+    background-color: #374e37;
+}
+.box-contact h1{
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 18px;
+}
+
+.form-row p {
+    min-width: 80px;
+    text-align: left;
+    margin: 0 16px 0 0;
+    color: #ffffff;
+    font-weight: bold;
+    font-family: 'Muli', Arial, Helvetica, sans-serif;
+}
+
+.form-row input[type="text"] {
+    width: 100%;
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #faf0e8;
+    border-radius: 5px;
+    background-color: #fff;
+    font-family: 'Noto Sans', Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1rem;
+}
+
+.submit-btn {
+    width: 100%;
+    max-width: 600px;
+    margin-top: 12px;
+    padding: 12px 32px;
+    background: #1c1d1c;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-family: 'Muli', Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.submit-btn:hover {
+    background: #101110;
+}
+.footer {
+  background: #456644;
+  color: #fff;
+  padding: 60px 40px 20px 40px;
+  position: relative;
+}
+
+.footer-overlay {
+  background-color: rgba(0, 0, 0, 0.25);
+  padding: 40px;
+  border-radius: 10px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-brand img {
+  width: 160px;
+  margin-bottom: 16px;
+}
+
+.footer-brand p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #eee;
+}
+
+.footer-info h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+.footer-info p,
+.footer-info a {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #ddd;
+  text-decoration: none;
+}
+
+.footer-info a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  border-top: 1px solid #fff;
+  padding-top: 16px;
+}
+
+.social-icon {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
 }
